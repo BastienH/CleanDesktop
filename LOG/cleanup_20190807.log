@@ -1,0 +1,48 @@
+2019-08-07 16:15:04,739:INFO:
+Start App
+2019-08-07 16:15:04,739:INFO:Source Directory: C:\Users\NG8203C\Desktop\CodeBase\Clean Desktop
+2019-08-07 16:15:04,740:INFO:Desktop path: C:\Users\NG8203C\Desktop\
+2019-08-07 16:15:04,740:INFO:
+Start Clean
+2019-08-07 16:15:06,232:INFO:..\Desktop\CG_VLDP.pdf --> ..\C:\Users\NG8203C\Desktop\PDFs
+2019-08-07 16:15:06,235:INFO:..\Desktop\IM Interface with other processes v2.zip --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-08-07 16:15:06,237:INFO:..\Desktop\IM Interface with other processes.pptx --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-08-07 16:15:06,239:INFO:..\Desktop\Incident New fields.PNG --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-08-07 16:15:06,240:ERROR:Error while moving: Incident New fields.PNG, it was probably not moved
+ Error:[WinError 2] The system cannot find the file specified: 'C:\\Users\\NG8203C\\Desktop\\Incident New fields.PNG' -> 'C:\\Users\\NG8203C\\Desktop\\Trash\\Incident New fields.PNG'
+2019-08-07 16:15:06,241:INFO:End Clean
+2019-08-07 16:15:15,185:INFO:End App
+2019-08-07 16:18:49,148:INFO:
+Start App
+2019-08-07 16:18:49,148:INFO:Source Directory: C:\Users\NG8203C\Desktop\CodeBase\Clean Desktop
+2019-08-07 16:18:49,149:INFO:Desktop path: C:\Users\NG8203C\Desktop\
+2019-08-07 16:18:49,149:INFO:
+Start Clean
+2019-08-07 16:18:56,047:INFO:End Clean
+2019-08-07 16:19:02,500:INFO:Desktop was already clean
+2019-08-07 16:19:02,500:INFO:End App
+2019-08-07 16:19:14,945:INFO:
+Start App
+2019-08-07 16:19:14,945:INFO:Source Directory: C:\Users\NG8203C\Desktop\CodeBase\Clean Desktop
+2019-08-07 16:19:14,945:INFO:Desktop path: C:\Users\NG8203C\Desktop\
+2019-08-07 16:19:14,945:INFO:
+Start Clean
+2019-08-07 16:19:15,691:INFO:End Clean
+2019-08-07 16:19:20,364:INFO:Desktop was already clean
+2019-08-07 16:19:20,364:INFO:End App
+2019-08-07 16:23:37,971:INFO:
+Start App
+2019-08-07 16:23:37,971:INFO:Source Directory: C:\Users\NG8203C\Desktop\CodeBase\Clean Desktop
+2019-08-07 16:23:37,971:INFO:Desktop path: C:\Users\NG8203C\Desktop\
+2019-08-07 16:23:37,971:INFO:
+Start Clean
+2019-08-07 16:23:38,947:INFO:..\Desktop\af-my-flight.ics --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-08-07 16:23:38,948:INFO:..\Desktop\fig_cropper.swf --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-08-07 16:23:38,950:INFO:..\Desktop\IS-TEM-TC-0080_D.xlsm --> ..\C:\Users\NG8203C\Desktop\Data
+2019-08-07 16:23:38,952:INFO:..\Desktop\node-v10.16.0-x64.msi --> ..\C:\Users\NG8203C\Desktop\Installs
+2019-08-07 16:23:38,954:INFO:..\Desktop\npp.plugins.rar --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-08-07 16:23:38,955:INFO:..\Desktop\Problem Management Process Flow Diagrams - Airbus V1.26b.vsdx --> ..\C:\Users\NG8203C\Desktop\Diagrams
+2019-08-07 16:23:38,956:INFO:..\Desktop\proxyfr.pac --> ..\C:\Users\NG8203C\Desktop\CodeBase\Scripts
+2019-08-07 16:23:38,957:INFO:..\Desktop\Semaphore_User_Management_Process.ppsx --> ..\C:\Users\NG8203C\Desktop\Documents
+2019-08-07 16:23:38,958:INFO:End Clean
+2019-08-07 16:23:52,775:INFO:End App

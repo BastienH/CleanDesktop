@@ -1,0 +1,24 @@
+2019-09-18 17:57:38,656:INFO:Start App ===>
+2019-09-18 17:57:38,656:INFO:Source Directory: C:\Users\NG8203C\Desktop\CodeBase\Clean Desktop\build\exe.win-amd64-3.7
+2019-09-18 17:57:38,656:INFO:Desktop path: C:\Users\NG8203C\Desktop\
+2019-09-18 17:57:38,656:INFO:Start Clean --->
+2019-09-18 17:57:40,068:INFO:..\Desktop\2019-09-16_17-47-18.jpg --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-09-18 17:57:40,070:INFO:..\Desktop\cmdb_ci_business_app.csv --> ..\C:\Users\NG8203C\Desktop\Data
+2019-09-18 17:57:40,071:INFO:..\Desktop\cmdb_ci_business_app.xlsx --> ..\C:\Users\NG8203C\Desktop\Data
+2019-09-18 17:57:40,074:INFO:..\Desktop\CustomerCare - Configuration description - V2.0.xlsx --> ..\C:\Users\NG8203C\Desktop\Data
+2019-09-18 17:57:40,075:INFO:..\Desktop\DOC180619-001.pdf --> ..\C:\Users\NG8203C\Desktop\Documents
+2019-09-18 17:57:40,077:INFO:..\Desktop\Drop down multi languages.zip --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-09-18 17:57:40,080:INFO:..\Desktop\eLearning-IncidentManagement.1.1.mp4 --> ..\C:\Users\NG8203C\Desktop\Videos
+2019-09-18 17:57:40,082:INFO:..\Desktop\MES SIMATIC IT R800 - Composite.png --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-09-18 17:57:40,082:ERROR:Error while moving: MES SIMATIC IT R800 - Composite.png, it was probably not moved
+ Error:[WinError 2] The system cannot find the file specified: 'C:\\Users\\NG8203C\\Desktop\\MES SIMATIC IT R800 - Composite.png' -> 'C:\\Users\\NG8203C\\Desktop\\Trash\\MES SIMATIC IT R800 - Composite.png'
+2019-09-18 17:57:40,084:INFO:..\Desktop\OLA_Requirement_template (002).xlsx --> ..\C:\Users\NG8203C\Desktop\Data
+2019-09-18 17:57:40,086:INFO:..\Desktop\PyInstaller-3.5.tar.gz --> ..\C:\Users\NG8203C\Desktop\Python Packages
+2019-09-18 17:57:40,089:INFO:..\Desktop\retina_icons.html --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-09-18 17:57:40,092:INFO:..\Desktop\ServiceNow_Platform-Exec-Summary-September-2019.pptx --> ..\C:\Users\NG8203C\Desktop\Trash
+2019-09-18 17:57:40,095:INFO:..\Desktop\setuptools-41.2.0-py2.py3-none-any.whl --> ..\C:\Users\NG8203C\Desktop\Python Packages
+2019-09-18 17:57:40,096:INFO:..\Desktop\STRY0200352.xlsx --> ..\C:\Users\NG8203C\Desktop\Data
+2019-09-18 17:57:40,098:INFO:..\Desktop\VA_Template.xlsx --> ..\C:\Users\NG8203C\Desktop\Data
+2019-09-18 17:57:40,099:INFO:..\Desktop\ZIW Business Applications.xlsx --> ..\C:\Users\NG8203C\Desktop\Data
+2019-09-18 17:57:40,100:INFO:---> End Clean
+2019-09-18 17:57:42,836:INFO:===> End App

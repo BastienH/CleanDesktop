@@ -1,0 +1,6 @@
+#!c:\users\ng8203c\desktop\codebase\clean desktop\venv\scripts\python.exe
+
+from cx_Freeze import main
+
+main()
+
