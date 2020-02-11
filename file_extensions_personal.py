@@ -16,7 +16,8 @@ file_categories_personal_list = [{
          "isCode" : False,
 	},
 	{"Name" : "Diagrams",
-	"Content" : ["vsdx"]
+	"Content" : ["vsdx"],
+	 "isCode" : False
 	},
 	{"Name" : "Python Packages",
 	"Content" : ["whl"],
