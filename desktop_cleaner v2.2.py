@@ -12,16 +12,24 @@
 import datetime
 import os
 import logging
-from os.path import join as pjoin
-from os.path import basename as basename
+import os.path.join as pjoin
+import os.path.basename as basename
 from platform import system
 
-#from file_extensions_general import *
-from file_extensions_personal import *
+from file_extensions_general import *
+#from file_extensions_personal import *
 
 
-"""This cleans up the Desktop folder based on file extension
-If it runs into files that are in use, it skips."""    
+"""This script is used to order a messy directory. Typically a desktop.
+What order?
+Check out file_extensions_general. Or run the present script and find out.
+
+The target of future versions is to order recursively people's storage devices.
+Important memories or ressources can stay crambed in sub-folders with awkard names.
+
+Until I implement recursivity, this script is quite harmless...
+It only runs in the requested folder. 
+"""    
 
                                                                                                         ### Context info ###
 
@@ -33,12 +41,13 @@ if system() == 'Windows':
     desktop = pjoin(os.environ['USERPROFILE'], 'Desktop', '') 
 
 elif system() in ('Linux', 'Darwin'):
-    desktop = pjoin(os.path.expanduser('~'), 'Desktop', '')
+    exit()
+    #desktop = pjoin(os.path.expanduser('~'), 'Desktop', '')
+
     
 #When
 now = datetime.datetime.now()
 today = ''.join([str(now.year), f"{now.month:02d}", f"{now.day:02d}"]) #Creates a "today" variable of format YYYYMMDD
-
 
 
 
