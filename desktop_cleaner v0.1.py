@@ -5,8 +5,6 @@
 # Author:      bastien.harkins
 #
 # Created:     10/11/2018
-# Copyright:   (c) bastien.harkins 2018
-# Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
 import datetime
@@ -169,6 +167,16 @@ def move_file_or_not(path):
 def move_file_specific_folder(src, dst):
     pass
                                                                                                     ### Main Function ###
+def create_new_structure(src_fpaths=[], sorting_dict={}, exception_list=[]):
+    pass
+    #Inspiration here : https://pythontips.com/2014/01/23/python-101-writing-a-cleanup-script/"
+
+def rollback():
+    pass
+
+def copy_dir_structure(dir, depth=None):
+    pass     
+                  
 def change_directory(src_fpaths=[], sorting_dict={}, exception_list=[]):
     """ This function renames desktop files to new folders as defined in the sorting_dict
 Example structure of the input dictionary is :
@@ -178,7 +186,7 @@ Example structure of the input dictionary is :
     mkdirs(sorting_dict)
 
     for src_fpath in src_fpaths:
-        src_fpath_lower = src_fpath.lower()  #Setting src_fpath name to lower case for better comparison
+        src_fpath_lower = src_fpath.lower()
         fname = basename(src_fpath)
 
         if move_file_or_not(src_fpath): #Let the user choose if files are moved individualy (for RECENT files)
