@@ -1,11 +1,11 @@
 personal_mapping = {
-	"Trash" : ["png", "bat", "jpg", "msg", ".lnk", "html", "pptx", 'ico', 'txt', "oft", "docx", "doc", "zip",".7z", "PNG", "emz", "pst", ".eml", "rar", "swf", "ics"],
-	"Installs" : ["exe", "rdp", "msi"],
-	"Diagrams" : ["vsdx"],
-	"Data" : ["csv", "xlsx", "xlsm", "xls", "json", "xml", "evtx"],
-	"Documents" : ["pdf", "ppsx"],
-	"Python Packages" : ["whl", "tar.gz"],
-	"Scripts" : [".py", "pac"],
+	"Trash" : [".png", ".bat", ".jpg", ".msg", ".lnk", ".html", ".pptx", '.ico', '.txt', ".oft", ".docx", ".doc", ".zip",".7z", ".PNG", ".emz", ".pst", ".eml", ".rar", ".swf", ".ics"],
+	"Installs" : [".exe", ".rdp", ".msi"],
+	"Diagrams" : [".vsdx"],
+	"Data" : [".csv", ".xlsx", ".xlsm", ".xls", ".json", ".xml", ".evtx", ".json", "json-formatted"],
+	"Documents" : [".pdf", ".ppsx"],
+	"Python Packages" : [".whl", ".tar.gz"],
+	"Scripts" : [".py", ".pac", ".js", ".sql", ".sh"],
 	"Videos" : [".mp4"],
 	}
 
