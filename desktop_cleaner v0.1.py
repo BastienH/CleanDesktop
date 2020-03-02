@@ -62,8 +62,8 @@ now = datetime.datetime.now()
 today = ''.join([str(now.year), f"{now.month:02d}", f"{now.day:02d}"]) #Creates a "today" variable of format YYYYMMDD
 
 #Parameters
-RECENT = 1
-EXCEPTIONS = []
+RECENT = 3 #Days
+EXCEPTIONS = [".ICO"] #
 HARD_CLEAN = False
 
                                                                                                         ### LOG config ###
@@ -99,17 +99,17 @@ def mkdirs(sorting_dict={}):
 def ui_verify_sorting(maps, exceptions=[]):
 
     for i, map in enumerate(maps):
-        print(f"\nOrder n°{i+1}:")
+        print(f"\nOrder n°{i+1} :")
         print(f"\nFOLDERS            <= FILES")
         for k, v in map.items():
             time.sleep(0.08)
             print(f"{k:<18} <= {', '.join(v)}")
-        time.sleep(2)
+        input("Press any key to show more")
 
     choice = input("Select your order, or any other key to cancel :")
     try:
-        choice = int(choice)
-        if choice in range(1, len(maps)+1):
+        choice = int(choice) - 1
+        if choice in range(len(maps)):
             return maps[choice]
     except:
         print("Clean-up Cancelled")
@@ -140,24 +140,30 @@ def user_output(ordered_files, unordered_files):
     else:
         print(str("\n\nClean up of :\n\n" + '\n'.join(ordered_files) + " \n\ncompleted successfully"))
 
-def check_recently_modified(path):
+def check_recently_modified(path:str) -> bool:
+    """
+    Returns a boolean checking if the file/dir has been modified recently (defined by the RECENT var)
+    and returns the formatted_datetime of this modification.
+    """
     edit_timestamp = getmtime(path)
     edit_datetime = datetime.datetime.fromtimestamp(edit_timestamp)
     formatted_edit_datetime = edit_datetime.strftime("%d/%m/%Y @ %H:%M:%S")
     delta = edit_datetime - now
-    if delta.days < RECENT:
+    if abs(delta.days) <= RECENT:
         return True, formatted_edit_datetime
     else:
         return False, formatted_edit_datetime
 
-def move_file_or_not(path):
-    """just check if the file as recently modified, if it has, user has the choice, else, we move"""
+def move_file_or_not(path:str) -> bool:
+    """
+    Check if the file as recently modified, if it has, user has the choice, else, we move
+    """
     recently_modified, formatted_edit_datetime = check_recently_modified(path)
 
     if recently_modified:
         choice = input(f' {basename(path).upper()} has been modified on {formatted_edit_datetime} \n'
             f'Do you wish to remove it from {basename(desktop).upper()}? y or n:')
-        if choice == 'y':
+        if choice in ['y', '']:
             return True
         else:
             return False
@@ -172,10 +178,46 @@ def create_new_structure(src_fpaths=[], sorting_dict={}, exception_list=[]):
     #Inspiration here : https://pythontips.com/2014/01/23/python-101-writing-a-cleanup-script/"
 
 def rollback():
+    """
+    Current rollback can be applied by running the following python code in the dir where the ordering was applied,
+    like so :
+    
+    MAP_NUM = 1 #Pick the order you had chosen
+    import mapping
+    dir_ = os.getcwd()
+    dirs = list(mapping.available_maps[MAP_NUM].keys())
+    dirs = [os.path.join(dir_, d) for d in dirs]
+    from_dirs_to_dir(dirs, dir_, del_dirs=True)
+    
+    """
     pass
 
+def from_dirs_to_dir(dirs, dir_, del_dirs=False)-> None:
+    """   
+    Dirs should be a list of fullpaths, dir_ is a target directory for all fils in the provided dirs
+    """
+    for d in dirs: #input full paths
+        assert os.path.isdir(d), '{d} is not a directory'
+        listdir = os.listdir(d)
+        for item in listdir:
+            item_fpath = join(d, item)
+            target = join(dir_, item)
+            os.rename(item_fpath, target)
+        if del_dirs:
+            os.rmdir(d)
+        
 def copy_dir_structure(dir, depth=None):
-    pass     
+    pass
+
+def apply_exceptions(maps):
+    for m in maps: #For each map
+        for type_list in m.values(): #For each list of types in the map
+            for t in type_list: #For each file extension in the list
+                #Upper all items for comparision
+                if t.upper() in [e.upper() for e in EXCEPTIONS]: 
+                    type_list.remove(t)
+    return maps
+
                   
 def change_directory(src_fpaths=[], sorting_dict={}, exception_list=[]):
     """ This function renames desktop files to new folders as defined in the sorting_dict
@@ -243,8 +285,10 @@ Example structure of the input dictionary is :
 if __name__ == "__main__":
     logging.info("Start Clean --->")
 
-    mapping_dict = ui_verify_sorting(mapping.available_maps)
+    apply_exceptions(mapping.available_maps)
 
+    mapping_dict = ui_verify_sorting(mapping.available_maps)
+        
     ordered_files =  []
     unordered_files = []
 
