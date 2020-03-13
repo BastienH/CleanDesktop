@@ -76,17 +76,18 @@ while True:
                 window.Element('INFO').Update(visible=True)
 
 #---------- Mapping ------------ 
-
-#---------- Adding Exceptions------------ 
+    def handle_lists_change(event, inputs):
+        pass
+#---------- Adding Elements------------ 
     if event == "add_exception":
         if inputs['exception'] != '':
             exception = inputs['exception']
             EXCEPTION_LIST.append(exception)
             window.Element('exceptions_list').Update(values=EXCEPTION_LIST)
             window.Element('exception').Update('')
-    if event in (None, 'Exit'):      
-        break      
-#---------- Remove Exceptions------------
+            
+    
+#---------- Removing Elements------------
     if event == "exceptions_list" and click < 1:
         click += 1
         continue
@@ -95,6 +96,8 @@ while True:
         window.Element('exceptions_list').Update(values=EXCEPTION_LIST)
         click = 0
 
+    if event in (None, 'Exit'):      
+        break  
 window.Close()
 
 
