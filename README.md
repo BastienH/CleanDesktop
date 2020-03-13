@@ -2,6 +2,8 @@
 A Script to Organize Desktop Files into Folders (instead of everywhere)
 
 
+Requirement : 
+Copy mytoolkit repo in your working python's site_packages folder
 
 TODO LIST :
 
