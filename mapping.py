@@ -7,6 +7,8 @@ personal_mapping = {
 	"Python Packages" : [".whl", ".tar.gz"],
 	"Scripts" : [".py", ".pac", ".js", ".sql", ".sh"],
 	"Videos" : [".mp4"],
+        "Code" : [".cpp", ".c", ".h"],
+        "No Type" : []
 	}
 
 general_mapping = {

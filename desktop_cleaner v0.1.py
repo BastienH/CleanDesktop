@@ -14,7 +14,7 @@ import logging
 from os.path import join, basename, getmtime
 from platform import system
 
-import mytoolkit as tool
+from mytoolkit import file_num_increment
 import mapping
 
 
@@ -68,7 +68,8 @@ HARD_CLEAN = False
 
                                                                                                         ### LOG config ###
 log_path = join(source_dir, "LOG", f'cleanup_{today}.log')
-assert os.path.exists(join(source_dir, "LOG")), os.mkdir(join(source_dir, "LOG"))
+if not os.path.exists(join(source_dir, "LOG")):
+    os.mkdir(join(source_dir, "LOG"))
 
 log_formatter = "%(asctime)s:%(levelname)s:%(message)s"
 logging.basicConfig(filename=log_path, level=logging.DEBUG, format=log_formatter)
@@ -89,7 +90,7 @@ def mkdirs(sorting_dict={}):
     """Create a directory in the desktop for each dictionary key"""
 
     assert type(sorting_dict) == dict, f"input should be dict, current type for {sorting_dict} is {type(sorting_dict)}"
-
+    
     for dirs in sorting_dict.keys():
             dirs_path = join(desktop, dirs, "")
             if os.path.isdir(dirs_path) == False:
@@ -172,7 +173,7 @@ def move_file_or_not(path:str) -> bool:
 
 def move_file_specific_folder(src, dst):
     pass
-                                                                                                    ### Main Function ###
+
 def create_new_structure(src_fpaths=[], sorting_dict={}, exception_list=[]):
     pass
     #Inspiration here : https://pythontips.com/2014/01/23/python-101-writing-a-cleanup-script/"
@@ -194,6 +195,7 @@ def rollback():
 
 def from_dirs_to_dir(dirs, dir_, del_dirs=False)-> None:
     """   
+    Groups files from differents directories into a single dir_.
     Dirs should be a list of fullpaths, dir_ is a target directory for all fils in the provided dirs
     """
     for d in dirs: #input full paths
@@ -217,8 +219,7 @@ def apply_exceptions(maps):
                 if t.upper() in [e.upper() for e in EXCEPTIONS]: 
                     type_list.remove(t)
     return maps
-
-                  
+                                                                                                    ### Main Function ###                  
 def change_directory(src_fpaths=[], sorting_dict={}, exception_list=[]):
     """ This function renames desktop files to new folders as defined in the sorting_dict
 Example structure of the input dictionary is :
@@ -259,7 +260,7 @@ Example structure of the input dictionary is :
                             logging.info(f"MOVED {os.path.basename(desktop)}\{fname} --> ..\{dst_dir}")
 
                     except FileExistsError:
-                            dst_fpath = tool.file_num_increment(dst_fpath)
+                            dst_fpath = file_num_increment(dst_fpath)
 
                             os.rename(src_fpath, dst_fpath)
                             f_new_name = os.path.basename(dst_fpath)
@@ -286,7 +287,7 @@ if __name__ == "__main__":
     logging.info("Start Clean --->")
 
     apply_exceptions(mapping.available_maps)
-
+    
     mapping_dict = ui_verify_sorting(mapping.available_maps)
         
     ordered_files =  []
