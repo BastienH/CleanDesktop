@@ -1,4 +1,25 @@
-personal_mapping = {
+class Named_Map():
+    def __init__(self, name, _map):
+        self.name = name
+        self.map = _map
+
+    def __repr__(self):
+        return str(self.map)
+
+    def __setitem__(self, key, value):
+        self.map[key] = value
+
+    def __getitem__(self, item):
+        return self.map[item]
+    
+    def __iter__(self):
+        return iter(self.map.items())
+   
+    def __len__(self):
+        return len(self.map)
+
+    
+personal_map = {
 	"Trash" : [".png", ".bat", ".jpg", ".msg", ".lnk", ".html", ".pptx", '.ico', '.txt', ".oft", ".docx", ".doc", ".zip",".7z", ".PNG", ".emz", ".pst", ".eml", ".rar", ".swf", ".ics"],
 	"Installs" : [".exe", ".rdp", ".msi"],
 	"Diagrams" : [".vsdx"],
@@ -11,7 +32,7 @@ personal_mapping = {
         "No Type" : []
 	}
 
-general_mapping = {
+general_map = {
     "Text Files": [ ".DOC",".DOCX",".LOG",".MSG",".ODT",".PAGES",".RTF",".TEX",".TXT",".WPD",".WPS"],
     "Data Files": [ ".CSV", ".DAT", ".GED", ".KEY", ".KEYCHAIN", ".PPS", ".PPT", ".PPTX", ".SDF", ".TAR", ".TAX2016", ".TAX2018", ".VCF", ".XML"   ],
     "Audio Files": [ ".AIF", ".IFF", ".M3U", ".M4A", ".MID", ".MP3", ".MPA", ".WAV", ".WMA"   ],
@@ -38,4 +59,8 @@ general_mapping = {
     "Backup Files": [ ".BAK", ".TMP"   ],
     "Misc Files": [ ".CRDOWNLOAD", ".ICS", ".MSI", ".PART", ".TORRENT"   ]
 }
-available_maps = [personal_mapping, general_mapping]
+
+personal_map = Named_Map('personal_map', personal_map)
+general_map = Named_Map('general_map', general_map)
+
+available_maps = [personal_map, general_map]
